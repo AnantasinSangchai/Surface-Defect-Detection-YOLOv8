@@ -1,3 +1,4 @@
+
 # Surface-Defect-Detection-YOLOv8
 ## Overview
 โปรเจคนี้เกี่ยวกับการตรวจจับและจำแนกตำหนิบนพื้นผิววัสดุ (Steel Surface Defects) โดยใช้ YOLOv8 ซึ่งเป็นโมเดล Deep Learning ประสิทธิภาพสูง เพื่อช่วยลดความผิดพลาดในการตรวจสอบคุณภาพในกระบวนการผลิตและเพิ่มความแม่นยำในการคัดแยกชิ้นส่วนที่ไม่ได้มาตรฐาน
@@ -8,10 +9,20 @@
 4.  Inference & Deployment – นำโมเดลที่ผ่านการเทรน (best.pt) ไปใช้ในการตรวจจับรูปภาพใหม่แบบอัตโนมัติ
 ## Results
 จากการทดสอบพบว่าโมเดลมีความสามารถในการแยกแยะตำหนิแต่ละประเภทได้ดังนี้:
+
 Cluster/Class: Scratches & Patches → โมเดลทำคะแนนได้ดีเยี่ยม (mAP สูงสุด) ตรวจจับรอยขีดข่วนและรอยด่างได้แม่นยำชัดเจน
+
 Cluster/Class: Inclusion & Pitted Surface → ตรวจจับได้ในระดับดีมาก มีความแม่นยำในการระบุตำแหน่งสิ่งแปลกปลอมบนผิวงาน
+
 Cluster/Class: Rolled-in Scale → ตรวจจับได้ในระดับปานกลาง สามารถแยกแยะรอยทับถมของผิวโลหะได้
+
 Cluster/Class: Crazing → เป็นกลุ่มที่ท้าทายที่สุด เนื่องจากรอยแตกลายงาที่มีลักษณะเล็กและกระจายตัว ต้องใช้ความละเอียดในการวิเคราะห์สูง
+
+![enter image description here](https://github.com/AnantasinSangchai/Surface-Defect-Detection-YOLOv8/blob/main/patches_272.jpg?raw=true)
+![enter image description here](https://github.com/AnantasinSangchai/Surface-Defect-Detection-YOLOv8/blob/main/rolled-in_scale_138.jpg?raw=true)
+![enter image description here](https://github.com/AnantasinSangchai/Surface-Defect-Detection-YOLOv8/blob/main/scratches_119.jpg?raw=true)
+![enter image description here](https://github.com/AnantasinSangchai/Surface-Defect-Detection-YOLOv8/blob/main/inclusion_215.jpg?raw=true)
+
 ## Conclusion
 กลยุทธ์ในการเพิ่มประสิทธิภาพของโมเดลคือการเน้นเพิ่ม Data Augmentation ในกลุ่มคลาสที่ตรวจจับยาก เพื่อสร้างโมเดลที่มีความเสถียรและพร้อมสำหรับการนำไปประยุกต์ใช้ในอุตสาหกรรมจริง
 ## Author
